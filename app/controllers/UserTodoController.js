@@ -1,15 +1,15 @@
 const db = require('../models');
-const User = db.users;
+const UserTodo = db.usersTodo;
 const Op = db.sequelize.Op;
 
 exports.findOne = (req, res) => {
-    User.findOne({
+    UserTodo.findOne({
         where: {
             email: req.query.email,
             password: req.query.password,
         }
-    }).then(function (user) {
-        res.json(user);
+    }).then(function (userTodo) {
+        res.json(userTodo);
         res.end();
     })
 }
@@ -18,7 +18,7 @@ exports.findAll = (req, res) => {
     const name = req.query.name;
     const condition = name ? {name: {[Op.like]: `%${name}%`}} : null;
 
-    User.findAll({where: condition})
+    UserTodo.findAll({where: condition})
         .then(data => {
             res.send(data);
         })
@@ -31,7 +31,7 @@ exports.findAll = (req, res) => {
 };
 
 exports.create = (req, res) => {
-    const user = User.build();
+    const user = UserTodo.build();
     user.name = req.body.name;
     user.password = req.body.password;
     user.email = req.body.email;
@@ -48,7 +48,7 @@ exports.create = (req, res) => {
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    User.destroy({
+    UserTodo.destroy({
         where: {id: id}
     })
         .then(num =>{

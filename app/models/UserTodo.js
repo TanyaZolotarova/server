@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    return sequelize.define('user', {
+    return sequelize.define('userTodo', {
             id: {
                 type: Sequelize.INTEGER(11),
                 field: 'id',
@@ -13,17 +13,22 @@ module.exports = (sequelize, Sequelize) => {
                 allowNull: false,
             },
 
-
-            password: {
+           description: {
                 type: Sequelize.STRING(255),
-                field: 'password',
+                field: 'text',
+                allowNull: false,
+            },
+            status: {
+                type: Sequelize.STRING(255),
+                field: 'boolean',
                 allowNull: true,
             },
-            email: {
-                type: Sequelize.STRING(255),
-                field: 'email',
-                allowNull: true,
-            }
+            user_id: {
+            type: Sequelize.INTEGER(11),
+            field: 'id',
+            autoIncrement: true,
+            allowNull: false,
+        },
         }, {
             freezeTableName: true,
             indexes: []

@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
-const userRouters = require('./app/routes/UserRoutes')
+const userRouters = require('./app/routes/UserRoutes');
+const userTodoRouters = require('./app/routes/UserTodoRoutes');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -19,7 +20,7 @@ db.sequelize.sync();
 //     console.log('Drop and re-sync db.');
 // });
 
-app.all('/*', function (req, res, next){
+app.all('/*', function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -28,13 +29,14 @@ app.all('/*', function (req, res, next){
 })
 
 app.use('/users', userRouters);
-app.get('/', (req, res)=>{
+app.use('/todo', userTodoRouters);
+app.get('/', (req, res) => {
     res.json({message: 'welcome to application.'})
-    });
+});
 
 
 // set port, listen for request
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 })
