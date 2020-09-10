@@ -10,7 +10,11 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1hGlOCc2LJh8ZoK6fwGnatcErh0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -19,10 +23,16 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="js.last.introduce.type" value="CONST" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/models" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/models" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -33,6 +43,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599645275683</updated>
       <workItem from="1599645276752" duration="11376000" />
+      <workItem from="1599722114842" duration="11199000" />
     </task>
     <servers />
   </component>
@@ -44,13 +55,21 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="560" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599657208085" />
+    <state x="698" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599722902833">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="698" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599722902833" />
     <state x="837" y="422" key="Github.ShareDialog" timestamp="1599655311939">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="837" y="422" key="Github.ShareDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599655311939" />
-    <state x="822" y="401" width="328" height="247" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1599656945303">
+    <state x="822" y="401" width="328" height="247" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1599729838770">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="822" y="401" width="328" height="247" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1044@0.0.1920.1044" timestamp="1599656945303" />
+    <state x="822" y="401" width="328" height="247" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1044@0.0.1920.1044" timestamp="1599729838770" />
+    <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1599729448890">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599729448890" />
   </component>
 </project>

@@ -3,10 +3,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const userRouters = require('./app/routes/UserRoutes');
-const userTodoRouters = require('./app/routes/UserTodoRoutes');
+// const taskRouters = require('/app/routes/TaskRoutes');
 const dotenv = require('dotenv');
 dotenv.config();
-
 app.use(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -29,14 +28,16 @@ app.all('/*', function (req, res, next) {
 })
 
 app.use('/users', userRouters);
-app.use('/todo', userTodoRouters);
+// app.use('/tasks', taskRouters);
+
 app.get('/', (req, res) => {
     res.json({message: 'welcome to application.'})
 });
 
 
 // set port, listen for request
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`);
-})
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}.`);
+    })
+

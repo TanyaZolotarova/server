@@ -12,8 +12,6 @@ module.exports = (sequelize, Sequelize) => {
                 field: 'name',
                 allowNull: false,
             },
-
-
             password: {
                 type: Sequelize.STRING(255),
                 field: 'password',

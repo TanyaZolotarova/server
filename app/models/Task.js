@@ -1,6 +1,7 @@
+
 module.exports = (sequelize, Sequelize) => {
-    return sequelize.define('userTodo', {
-            id: {
+    return sequelize.define('task', {
+        id: {
                 type: Sequelize.INTEGER(11),
                 field: 'id',
                 primaryKey: true,
@@ -12,24 +13,19 @@ module.exports = (sequelize, Sequelize) => {
                 field: 'name',
                 allowNull: false,
             },
-
-           description: {
-                type: Sequelize.STRING(255),
-                field: 'text',
-                allowNull: false,
-            },
             status: {
-                type: Sequelize.STRING(255),
-                field: 'boolean',
-                allowNull: true,
+                type: Sequelize.BOOLEAN,
+                field: 'status',
+                allowNull: false,
+                defaultValue: true
             },
             user_id: {
-            type: Sequelize.INTEGER(11),
-            field: 'id',
-            autoIncrement: true,
-            allowNull: false,
+                type: Sequelize.INTEGER(11),
+                field: 'user_id',
+                allowNull: false,
+            },
         },
-        }, {
+        {
             freezeTableName: true,
             indexes: []
         }
