@@ -15,8 +15,6 @@ exports.findOne = (req, res) => {
 }
 
 exports.findAll = (req, res) => {
-    // const name = req.query.name;
-    // const condition = name ? {name: {[Op.like]: `%${name}%`}} : null;
 
     User.findAll( {
         include: [
@@ -71,3 +69,28 @@ exports.delete = (req, res) => {
                 })
         })
 };
+
+exports.login = (req, res) => {
+    const {password, email} = req.body;
+
+    User.findOne({
+        where: {
+            email,
+            password,
+        }
+    }).then(function (user) {
+        if(user) {
+            res.json(user);
+        } else {
+            res.status(500).send({
+                message: `User not found`
+            })
+        }
+
+        res.end();
+    }).catch(() =>{
+        res.status(500).send({
+            message: `User not found`
+        })
+    })
+}
