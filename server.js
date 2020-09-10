@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const userRouters = require('./app/routes/UserRoutes');
-// const taskRouters = require('/app/routes/TaskRoutes');
+const taskRouters = require('./app/routes/TaskRoutes');
 const dotenv = require('dotenv');
 dotenv.config();
 app.use(bodyParser.json());
@@ -28,7 +28,7 @@ app.all('/*', function (req, res, next) {
 })
 
 app.use('/users', userRouters);
-// app.use('/tasks', taskRouters);
+app.use('/tasks', taskRouters);
 
 app.get('/', (req, res) => {
     res.json({message: 'welcome to application.'})

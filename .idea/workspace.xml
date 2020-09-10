@@ -43,7 +43,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599645275683</updated>
       <workItem from="1599645276752" duration="11376000" />
-      <workItem from="1599722114842" duration="11199000" />
+      <workItem from="1599722114842" duration="19245000" />
     </task>
     <servers />
   </component>
@@ -51,10 +51,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="560" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599657208085">
+    <state x="560" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599740820545">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="560" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599657208085" />
+    <state x="560" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599740820545" />
     <state x="698" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599722902833">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
@@ -63,13 +63,17 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="837" y="422" key="Github.ShareDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599655311939" />
-    <state x="822" y="401" width="328" height="247" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1599729838770">
+    <state x="822" y="401" width="328" height="247" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1599741015233">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="822" y="401" width="328" height="247" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1044@0.0.1920.1044" timestamp="1599729838770" />
+    <state x="822" y="401" width="328" height="247" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1044@0.0.1920.1044" timestamp="1599741015233" />
     <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1599729448890">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599729448890" />
+    <state x="664" y="261" width="592" height="522" key="find.popup" timestamp="1599740665342">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="664" y="261" width="592" height="522" key="find.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1599740665342" />
   </component>
 </project>

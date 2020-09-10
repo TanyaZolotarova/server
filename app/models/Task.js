@@ -19,11 +19,6 @@ module.exports = (sequelize, Sequelize) => {
                 allowNull: false,
                 defaultValue: true
             },
-            user_id: {
-                type: Sequelize.INTEGER(11),
-                field: 'user_id',
-                allowNull: false,
-            },
         },
         {
             freezeTableName: true,

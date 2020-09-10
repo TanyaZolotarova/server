@@ -1,11 +1,11 @@
 const db = require('../models');
 const Task = db.tasks;
-const Op = db.sequelize.Op;
+
 
 exports.findAll = (req, res) => {
     Task.findAll()
         .then(tasks => {
-            res.json(task)
+            res.json(tasks)
         })
         .catch(err => {
             res.send('error:' + err)
@@ -78,5 +78,3 @@ exports.update = (req, res) => {
             .error(err => handleError(err))
     }
 };
-
-module.export = router

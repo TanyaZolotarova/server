@@ -15,10 +15,14 @@ exports.findOne = (req, res) => {
 }
 
 exports.findAll = (req, res) => {
-    const name = req.query.name;
-    const condition = name ? {name: {[Op.like]: `%${name}%`}} : null;
+    // const name = req.query.name;
+    // const condition = name ? {name: {[Op.like]: `%${name}%`}} : null;
 
-    User.findAll({where: condition})
+    User.findAll( {
+        include: [
+            'tasks'
+        ],
+    })
         .then(data => {
             res.send(data);
         })
@@ -35,7 +39,6 @@ exports.create = (req, res) => {
     user.name = req.body.name;
     user.password = req.body.password;
     user.email = req.body.email;
-    user.phone = req.body.phone;
     user.save()
         .then(function (user){
             res.json(user);
@@ -59,12 +62,12 @@ exports.delete = (req, res) => {
             } else {
                 res.send({
                     message: `Cannot delete User with id=${id}`
-                });
+                })
             }
         })
         .catch(err => {
             res.status(500).send({
                 message: `Could not delete User with id=${id}`
-                });
-        });
+                })
+        })
 };
