@@ -21,5 +21,13 @@
   },
   "devDependencies": {
     "sequelize-cli": "^6.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TanyaZolotarova/server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TanyaZolotarova/server/issues"
+  },
+  "homepage": "https://github.com/TanyaZolotarova/server#readme"
 }

@@ -11,8 +11,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 
 // DB
-const db = require('./app/models');
-db.sequelize.sync();
+const db = require('./models');
 
 // drop the table if it already exists
 // db.sequelize.sync({force: true}).then(() => {
@@ -36,8 +35,10 @@ app.get('/', (req, res) => {
 
 
 // set port, listen for request
-    const PORT = process.env.PORT || 3000;
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}.`);
-    })
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    db.sequelize.sync();
+
+    console.log(`Server is running on port ${PORT}.`);
+})
 

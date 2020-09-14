@@ -12,7 +12,7 @@ let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
+  sequelize = new Sequelize(config.database, config.name, config.password, config);
 }
 
 fs
@@ -33,5 +33,10 @@ Object.keys(db).forEach(modelName => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+db.User.hasMany(db.Task, {as: 'tasks'});
+db.Task.belongsTo(db.User, {
+  foreignKey: 'userId',
+  as: 'users',
+});
 
 module.exports = db;

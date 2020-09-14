@@ -1,5 +1,6 @@
-const db = require('../models');
+const db = require('../../models');
 const Task = db.tasks;
+
 
 
 exports.findAll = (req, res) => {
@@ -13,7 +14,8 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-    Task.findOne({
+    Task.findOne(
+        {
         where: {
             id: req.params.id
         }
