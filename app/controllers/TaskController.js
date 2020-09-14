@@ -1,6 +1,5 @@
 const db = require('../../models');
-const Task = db.tasks;
-
+const Task = db.Task;
 
 
 exports.findAll = (req, res) => {
@@ -33,7 +32,7 @@ exports.findOne = (req, res) => {
 };
 
 exports.create = (req, res) => {
-    if (!req.body.name) {
+    if (!req.body.title) {
         res.status(400)
         res.json({
             error: 'Bad Data'

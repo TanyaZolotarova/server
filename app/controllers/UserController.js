@@ -1,5 +1,5 @@
 const db = require('../../models');
-const User = db.users;
+const User =db.User;
 const Op = db.sequelize.Op;
 
 exports.findOne = (req, res) => {

@@ -4,12 +4,12 @@
     <list default="true" id="c8676367-e64d-49d7-9839-a95d5eabec8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c893b77-6eb2-4894-bf12-3398776e1f91.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8c893b77-6eb2-4894-bf12-3398776e1f91.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/db.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/TaskController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/TaskController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Task.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/User.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/20200914082852-create-task.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20200914082852-create-task.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/task.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/task.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seeders/20200914084921-demo-task.js" beforeDir="false" afterPath="$PROJECT_DIR$/seeders/20200914084921-demo-task.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +35,7 @@
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -56,7 +56,7 @@
       <workItem from="1599722114842" duration="26240000" />
       <workItem from="1599808812060" duration="3777000" />
       <workItem from="1599833955896" duration="1899000" />
-      <workItem from="1600067513260" duration="12234000" />
+      <workItem from="1600067513260" duration="15640000" />
     </task>
     <servers />
   </component>
@@ -76,21 +76,21 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="837" y="422" key="Github.ShareDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599655311939" />
-    <state x="461" y="157" key="SettingsEditor" timestamp="1600083719729">
+    <state x="461" y="157" key="SettingsEditor" timestamp="1600086010279">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="461" y="157" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1600083719729" />
-    <state x="822" y="401" width="328" height="259" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600083859981">
+    <state x="461" y="157" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1600086010279" />
+    <state x="822" y="401" width="328" height="259" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600087352767">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="822" y="401" width="328" height="259" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1044@0.0.1920.1044" timestamp="1600083859981" />
+    <state x="822" y="401" width="328" height="259" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1044@0.0.1920.1044" timestamp="1600087352767" />
     <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1599729448890">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599729448890" />
-    <state x="664" y="261" width="592" height="522" key="find.popup" timestamp="1599740665342">
+    <state x="664" y="213" width="592" height="831" key="find.popup" timestamp="1600086515529">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="664" y="261" width="592" height="522" key="find.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1599740665342" />
+    <state x="664" y="213" width="592" height="831" key="find.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1600086515529" />
   </component>
 </project>

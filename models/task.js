@@ -14,12 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Task.init({
-    name: DataTypes.STRING,
-      userId: {
-            type: DataTypes.BIGINT(11),
-            field: 'userId',
-            allowNull: true,
-        },
+    title: DataTypes.STRING,
+      status:     DataTypes.BOOLEAN,
     }, {
         sequelize,
         modelName: 'Task',

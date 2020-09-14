@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 // set port, listen for request
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    db.sequelize.sync();
+    // db.sequelize.sync();
 
     console.log(`Server is running on port ${PORT}.`);
 })
