@@ -1,6 +1,8 @@
 const db = require('../../models');
-const User =db.User;
+const User = db.User;
 const Op = db.sequelize.Op;
+const bcrypt = require("bcrypt");
+
 
 exports.findOne = (req, res) => {
     User.findOne({
@@ -16,7 +18,7 @@ exports.findOne = (req, res) => {
 
 exports.findAll = (req, res) => {
 
-    User.findAll( {
+    User.findAll({
         include: [
             'tasks'
         ],
@@ -35,14 +37,15 @@ exports.findAll = (req, res) => {
 exports.create = (req, res) => {
     const user = User.build();
     user.name = req.body.name;
-    user.password = req.body.password;
+    user.password = bcrypt.hashSync(req.body.password, 8);
     user.email = req.body.email;
+
     user.save()
-        .then(function (user){
+        .then(function (user) {
             res.json(user);
             res.end();
-        }).catch(function (err){
-            res.status(400).send(err);
+        }).catch(function (err) {
+        res.status(400).send(err);
     });
 }
 
@@ -52,7 +55,7 @@ exports.delete = (req, res) => {
     User.destroy({
         where: {id: id}
     })
-        .then(num =>{
+        .then(num => {
             if (num === 1) {
                 res.send({
                     message: 'User was deleted successfully!'
@@ -66,9 +69,51 @@ exports.delete = (req, res) => {
         .catch(err => {
             res.status(500).send({
                 message: `Could not delete User with id=${id}`
-                })
+            })
         })
 };
+
+
+// exports.signin = (req, res) => {
+//
+//     const {email, password} = req.body;
+//
+//     User.findOne({
+//         where: {
+//             email
+//         }
+//     })
+//         .then(user => {
+//             if (!user) {
+//                 return res.status(404).send({message: "User Not found."});
+//             }
+//
+//             const passwordIsValid = bcrypt.compareSync(
+//                 password,
+//                 user.password
+//             );
+//
+//             if (!passwordIsValid) {
+//                 return res.status(401).send({
+//                     message: "Invalid Password!"
+//                 });
+//             }
+//
+//             const token = jwt.sign({id: user.id}, config.secret, {
+//                 expiresIn: 86400 // 24 hours
+//             });
+//
+//             user.update({token}).then(() => {
+//                 res.send(
+//                     user
+//                 );
+//             }).catch((err) => {
+//                 res.status(400).send(err);
+//             })
+//         }).catch((err) => {
+//         res.status(400).send(err);
+//     })
+// };
 
 exports.login = (req, res) => {
     const {password, email} = req.body;
@@ -76,13 +121,24 @@ exports.login = (req, res) => {
     User.findOne({
         where: {
             email,
-            password,
         },
         include: [
             'tasks'
         ],
     }).then(function (user) {
-        if(user) {
+
+        if (user) {
+            const passwordIsValid = bcrypt.compareSync(
+                password,
+                user.password
+            );
+
+            if (!passwordIsValid) {
+                return res.status(401).send({
+                    message: "Invalid Password!"
+                });
+            }
+
             res.json(user);
         } else {
             res.status(500).send({
@@ -91,7 +147,33 @@ exports.login = (req, res) => {
         }
 
         res.end();
-    }).catch(() =>{
+    }).catch(() => {
+        res.status(500).send({
+            message: `User not found`
+        })
+    })
+}
+
+exports.register = (req, res) => {
+    const {password, email, name} = req.body;
+
+    User.findOne({
+        where: {
+            email,
+            password,
+            name,
+        }
+    }).then(function (user) {
+        if (user) {
+            res.json(user);
+        } else {
+            res.status(500).send({
+                message: `User not found`
+            })
+        }
+
+        res.end();
+    }).catch(() => {
         res.status(500).send({
             message: `User not found`
         })
