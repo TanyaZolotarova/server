@@ -6,9 +6,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/TaskController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/TaskController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/20200914082852-create-task.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20200914082852-create-task.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/TaskRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/TaskRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/20200911115329-create-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20200911115329-create-user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/task.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/task.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seeders/20200914084921-demo-task.js" beforeDir="false" afterPath="$PROJECT_DIR$/seeders/20200914084921-demo-task.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +59,8 @@
       <workItem from="1599808812060" duration="3777000" />
       <workItem from="1599833955896" duration="1899000" />
       <workItem from="1600067513260" duration="15640000" />
+      <workItem from="1600154374468" duration="16477000" />
+      <workItem from="1600240822772" duration="8759000" />
     </task>
     <servers />
   </component>
@@ -80,17 +84,17 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="461" y="157" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1600086010279" />
-    <state x="822" y="401" width="328" height="259" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600087352767">
+    <state x="822" y="401" width="328" height="259" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600246166060">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="822" y="401" width="328" height="259" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1044@0.0.1920.1044" timestamp="1600087352767" />
+    <state x="822" y="401" width="328" height="259" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1044@0.0.1920.1044" timestamp="1600246166060" />
     <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1599729448890">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599729448890" />
-    <state x="664" y="213" width="592" height="831" key="find.popup" timestamp="1600086515529">
+    <state x="664" y="213" width="592" height="831" key="find.popup" timestamp="1600174034472">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="664" y="213" width="592" height="831" key="find.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1600086515529" />
+    <state x="664" y="213" width="592" height="831" key="find.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1600174034472" />
   </component>
 </project>

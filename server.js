@@ -6,6 +6,7 @@ const userRouters = require('./app/routes/UserRoutes');
 const taskRouters = require('./app/routes/TaskRoutes');
 const dotenv = require('dotenv');
 dotenv.config();
+
 app.use(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -37,7 +38,7 @@ app.get('/', (req, res) => {
 // set port, listen for request
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    // db.sequelize.sync();
+    db.sequelize.sync();
 
     console.log(`Server is running on port ${PORT}.`);
 })

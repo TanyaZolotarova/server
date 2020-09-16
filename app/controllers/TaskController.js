@@ -55,7 +55,7 @@ exports.delete = (req, res) => {
         }
     })
         .then(() => {
-            res.json({status: 'Task Deleted!'})
+            res.json(req.params.id)
         })
         .catch(err => {
             res.send('error:' + err)
@@ -63,12 +63,7 @@ exports.delete = (req, res) => {
 };
 
 exports.update = (req, res) => {
-    if (!req.body.status) {
-        res.status(400)
-        res.json({
-            error: 'Bad Data'
-        })
-    } else {
+    console.log( req.params.id)
         Task.update(
             {status: req.body.status},
             {where: {id: req.params.id}}
@@ -76,6 +71,6 @@ exports.update = (req, res) => {
             .then(() => {
                 res.json({status: 'Task Update!'})
             })
-            .error(err => handleError(err))
-    }
+            .catch(err => console.log(err))
+
 };

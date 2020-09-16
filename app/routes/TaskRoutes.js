@@ -5,7 +5,7 @@ router.get('/', tasks.findAll);
 router.get('/one', tasks.findOne);
 router.post('/', tasks.create);
 router.delete('/:id', tasks.delete);
-router.put('/', tasks.update);
+router.put('/:id/update', tasks.update);
 
 
 module.exports = router;

@@ -77,7 +77,10 @@ exports.login = (req, res) => {
         where: {
             email,
             password,
-        }
+        },
+        include: [
+            'tasks'
+        ],
     }).then(function (user) {
         if(user) {
             res.json(user);
