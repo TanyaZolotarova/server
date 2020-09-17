@@ -1,5 +1,6 @@
 const db = require('../../models');
 const Task = db.Task;
+const User = db.User;
 
 
 exports.findAll = (req, res) => {
@@ -11,6 +12,10 @@ exports.findAll = (req, res) => {
             res.send('error:' + err)
         })
 };
+
+function checkUser(userId) {
+    return User.findByPk(userId);
+}
 
 exports.findOne = (req, res) => {
     Task.findOne(
@@ -73,4 +78,15 @@ exports.update = (req, res) => {
             })
             .catch(err => console.log(err))
 
+};
+exports.findById = (req, res) => {
+    const id = req.params.id;
+    Task.findOne({
+        where: {
+            id
+        },
+    }).then(function (user) {
+        res.json(user);
+        res.end();
+    })
 };

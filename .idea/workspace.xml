@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c8676367-e64d-49d7-9839-a95d5eabec8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Middleware/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Middleware/error-handler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/auth.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c893b77-6eb2-4894-bf12-3398776e1f91.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8c893b77-6eb2-4894-bf12-3398776e1f91.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/TaskController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/TaskController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/TaskRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/TaskRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/UserRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/UserRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/20200911115329-create-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20200911115329-create-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/20200914082852-create-task.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20200914082852-create-task.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +45,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="nest.js" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1hGlOCc2LJh8ZoK6fwGnatcErh0" />
@@ -55,12 +88,24 @@
       <workItem from="1599833955896" duration="1899000" />
       <workItem from="1600067513260" duration="15640000" />
       <workItem from="1600154374468" duration="16477000" />
-      <workItem from="1600240822772" duration="17805000" />
+      <workItem from="1600240822772" duration="19798000" />
+      <workItem from="1600326606680" duration="14714000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="560" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599740820545">
@@ -79,14 +124,18 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="461" y="157" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1600086010279" />
-    <state x="822" y="401" width="328" height="259" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600246166060">
+    <state x="822" y="401" width="328" height="259" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600344076676">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="822" y="401" width="328" height="259" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1044@0.0.1920.1044" timestamp="1600246166060" />
+    <state x="822" y="401" width="328" height="259" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1044@0.0.1920.1044" timestamp="1600344076676" />
     <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1599729448890">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599729448890" />
+    <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1600335298833">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1600335298833" />
     <state x="664" y="213" width="592" height="831" key="find.popup" timestamp="1600174034472">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
