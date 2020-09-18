@@ -104,15 +104,11 @@ exports.login = (req, res) => {
                 expiresIn
             });
 
-            user.update({token})
-                .then((user) => {
-                    res.status(200).send({
-                        user,
-                        expiresIn,
-                    });
-
-                })
-                .catch((err) => res.status(400).send(err))
+        res.status(200).send({
+            user,
+            token,
+            expiresIn,
+        });
 
         }
     ).catch((err) => res.status(400).send(err))

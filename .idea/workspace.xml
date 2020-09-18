@@ -16,11 +16,21 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/testing" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8676367-e64d-49d7-9839-a95d5eabec8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/20200917115839-modify_users_add_token.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +85,18 @@
       <workItem from="1600067513260" duration="15640000" />
       <workItem from="1600154374468" duration="16477000" />
       <workItem from="1600240822772" duration="19798000" />
-      <workItem from="1600326606680" duration="18332000" />
+      <workItem from="1600326606680" duration="19291000" />
+      <workItem from="1600356183841" duration="2953000" />
+      <workItem from="1600414305904" duration="927000" />
     </task>
+    <task id="LOCAL-00001" summary="testing brunch">
+      <created>1600353516011</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600353516011</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,11 +107,28 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/testing" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="testing brunch" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing brunch" />
   </component>
   <component name="WindowStateProjectService">
     <state x="560" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599740820545">
@@ -102,6 +139,10 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="698" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599722902833" />
+    <state x="556" y="4" key="CommitChangelistDialog2" timestamp="1600353515904">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="556" y="4" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1600353515904" />
     <state x="837" y="422" key="Github.ShareDialog" timestamp="1599655311939">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
@@ -110,6 +151,10 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="461" y="157" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1600086010279" />
+    <state x="560" y="240" key="Vcs.Push.Dialog.v2" timestamp="1600353517452">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="560" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1600353517452" />
     <state x="822" y="401" width="328" height="259" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600344076676">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
