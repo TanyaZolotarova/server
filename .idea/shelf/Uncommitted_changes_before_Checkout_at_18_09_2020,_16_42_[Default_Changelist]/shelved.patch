@@ -1,0 +1,138 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"BranchesTreeState\">\n    <expand>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n    </expand>\n    <select />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"c8676367-e64d-49d7-9839-a95d5eabec8d\" name=\"Default Changelist\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/app/Middleware/auth.js\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/app/Middleware/error-handler.js\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/config/auth.config.json\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources/8c893b77-6eb2-4894-bf12-3398776e1f91.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources/8c893b77-6eb2-4894-bf12-3398776e1f91.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/app/controllers/TaskController.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/controllers/TaskController.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/app/controllers/UserController.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/controllers/UserController.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/app/routes/TaskRoutes.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/routes/TaskRoutes.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/app/routes/UserRoutes.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/routes/UserRoutes.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/config/config.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/config/config.json\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/migrations/20200911115329-create-user.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/migrations/20200911115329-create-user.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/migrations/20200914082852-create-task.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/migrations/20200914082852-create-task.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/models/user.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/models/user.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/package-lock.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/package-lock.json\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/package.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/package.json\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ComposerSettings\">\n    <execution />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"nest.js\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"1hGlOCc2LJh8ZoK6fwGnatcErh0\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"DatabaseDriversLRU\" value=\"mysql\" />\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"js.last.introduce.type\" value=\"CONST\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"reference.settingsdialog.IDE.editor.colors.Console Colors\" />\n    <property name=\"ts.external.directory.path\" value=\"$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external\" />\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/app/models\" />\n    </key>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"c8676367-e64d-49d7-9839-a95d5eabec8d\" name=\"Default Changelist\" comment=\"\" />\n      <created>1599645275683</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1599645275683</updated>\n      <workItem from=\"1599645276752\" duration=\"11376000\" />\n      <workItem from=\"1599722114842\" duration=\"26240000\" />\n      <workItem from=\"1599808812060\" duration=\"3777000\" />\n      <workItem from=\"1599833955896\" duration=\"1899000\" />\n      <workItem from=\"1600067513260\" duration=\"15640000\" />\n      <workItem from=\"1600154374468\" duration=\"16477000\" />\n      <workItem from=\"1600240822772\" duration=\"19798000\" />\n      <workItem from=\"1600326606680\" duration=\"14714000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"WindowStateProjectService\">\n    <state x=\"560\" y=\"184\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog\" timestamp=\"1599740820545\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"560\" y=\"184\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1599740820545\" />\n    <state x=\"698\" y=\"271\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog\" timestamp=\"1599722902833\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"698\" y=\"271\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1599722902833\" />\n    <state x=\"837\" y=\"422\" key=\"Github.ShareDialog\" timestamp=\"1599655311939\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"837\" y=\"422\" key=\"Github.ShareDialog/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1599655311939\" />\n    <state x=\"461\" y=\"157\" key=\"SettingsEditor\" timestamp=\"1600086010279\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"461\" y=\"157\" key=\"SettingsEditor/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1600086010279\" />\n    <state x=\"822\" y=\"401\" width=\"328\" height=\"259\" key=\"com.intellij.database.actions.DdlActions$DeleteProvider2$1\" timestamp=\"1600344076676\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"822\" y=\"401\" width=\"328\" height=\"259\" key=\"com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1600344076676\" />\n    <state x=\"100\" y=\"100\" width=\"1720\" height=\"844\" key=\"com.intellij.history.integration.ui.views.DirectoryHistoryDialog\" timestamp=\"1599729448890\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"100\" y=\"100\" width=\"1720\" height=\"844\" key=\"com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1599729448890\" />\n    <state x=\"100\" y=\"100\" width=\"1720\" height=\"844\" key=\"com.intellij.history.integration.ui.views.FileHistoryDialog\" timestamp=\"1600335298833\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"100\" y=\"100\" width=\"1720\" height=\"844\" key=\"com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1600335298833\" />\n    <state x=\"664\" y=\"213\" width=\"592\" height=\"831\" key=\"find.popup\" timestamp=\"1600174034472\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"664\" y=\"213\" width=\"592\" height=\"831\" key=\"find.popup/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1600174034472\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 6710d83c88948b20662163a9606145b280e4c85d)
++++ .idea/workspace.xml	(date 1600436515905)
+@@ -16,25 +16,22 @@
+         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+       </path>
+     </expand>
+-    <select />
++    <select>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="BRANCH:origin/testing" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </select>
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="c8676367-e64d-49d7-9839-a95d5eabec8d" name="Default Changelist" comment="">
+-      <change afterPath="$PROJECT_DIR$/app/Middleware/auth.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/app/Middleware/error-handler.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/config/auth.config.json" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c893b77-6eb2-4894-bf12-3398776e1f91.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8c893b77-6eb2-4894-bf12-3398776e1f91.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/controllers/TaskController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/TaskController.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserController.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/routes/TaskRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/TaskRoutes.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/routes/UserRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/UserRoutes.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/migrations/20200911115329-create-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20200911115329-create-user.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/migrations/20200914082852-create-task.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20200914082852-create-task.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/migrations/20200914102727-migration-skeleton.js" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -47,7 +44,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="nest.js" />
++        <entry key="$PROJECT_DIR$" value="master" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -89,8 +86,18 @@
+       <workItem from="1600067513260" duration="15640000" />
+       <workItem from="1600154374468" duration="16477000" />
+       <workItem from="1600240822772" duration="19798000" />
+-      <workItem from="1600326606680" duration="14714000" />
++      <workItem from="1600326606680" duration="19291000" />
++      <workItem from="1600356183841" duration="2953000" />
++      <workItem from="1600414305904" duration="927000" />
++    </task>
++    <task id="LOCAL-00001" summary="testing brunch">
++      <created>1600353516011</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1600353516011</updated>
+     </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -101,11 +108,28 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="origin/testing" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="testing brunch" />
++    <option name="LAST_COMMIT_MESSAGE" value="testing brunch" />
+   </component>
+   <component name="WindowStateProjectService">
+     <state x="560" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599740820545">
+@@ -116,6 +140,10 @@
+       <screen x="0" y="0" width="1920" height="1044" />
+     </state>
+     <state x="698" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599722902833" />
++    <state x="556" y="4" key="CommitChangelistDialog2" timestamp="1600353515904">
++      <screen x="0" y="0" width="1920" height="1044" />
++    </state>
++    <state x="556" y="4" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1600353515904" />
+     <state x="837" y="422" key="Github.ShareDialog" timestamp="1599655311939">
+       <screen x="0" y="0" width="1920" height="1044" />
+     </state>
+@@ -124,6 +152,10 @@
+       <screen x="0" y="0" width="1920" height="1044" />
+     </state>
+     <state x="461" y="157" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1600086010279" />
++    <state x="560" y="240" key="Vcs.Push.Dialog.v2" timestamp="1600353517452">
++      <screen x="0" y="0" width="1920" height="1044" />
++    </state>
++    <state x="560" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1600353517452" />
+     <state x="822" y="401" width="328" height="259" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1600344076676">
+       <screen x="0" y="0" width="1920" height="1044" />
+     </state>
+@@ -132,10 +164,10 @@
+       <screen x="0" y="0" width="1920" height="1044" />
+     </state>
+     <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599729448890" />
+-    <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1600335298833">
++    <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1600423323673">
+       <screen x="0" y="0" width="1920" height="1044" />
+     </state>
+-    <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1600335298833" />
++    <state x="100" y="100" width="1720" height="844" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1600423323673" />
+     <state x="664" y="213" width="592" height="831" key="find.popup" timestamp="1600174034472">
+       <screen x="0" y="0" width="1920" height="1044" />
+     </state>

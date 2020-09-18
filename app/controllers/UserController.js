@@ -183,7 +183,7 @@ exports.update = (req, res) => {
     const {email, name} = req.body;
 
     User.findByPk(id).then( (user) =>
-        user.update({where:
+        user.update({
             email,
             name,
         }) .then(function (user) {
