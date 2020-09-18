@@ -10,6 +10,7 @@ router.delete('/:id', users.delete);
 router.post('/login', users.login);
 router.post('/register', users.create);
 router.post('/logout', users.logout);
+router.put('/:id/update', users.update);
 
 router.get('/me', auth, users.me);
 

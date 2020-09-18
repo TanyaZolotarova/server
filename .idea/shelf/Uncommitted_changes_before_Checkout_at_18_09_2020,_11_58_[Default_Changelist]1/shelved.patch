@@ -1,0 +1,17 @@
+Index: app/routes/UserRoutes.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>const users = require('../controllers/UserController.js');\nconst router = require('express').Router();\nconst auth = require('../Middleware/auth');\n\n// auth\nrouter.get('/', users.findAll);\nrouter.get('/one', users.findOne);\nrouter.post('/', users.create);\nrouter.delete('/:id', users.delete);\nrouter.post('/login', users.login);\nrouter.post('/register', users.create);\nrouter.post('/logout', users.logout);\n\nrouter.get('/me', auth, users.me);\n\nmodule.exports = router;\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/routes/UserRoutes.js	(revision 759a3bd824ee46693fd8ff17af2825ff5763b844)
++++ app/routes/UserRoutes.js	(date 1600418401699)
+@@ -10,6 +10,7 @@
+ router.post('/login', users.login);
+ router.post('/register', users.create);
+ router.post('/logout', users.logout);
++router.put('/:id/update', users.update);
+ 
+ router.get('/me', auth, users.me);
+ 

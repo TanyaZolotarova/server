@@ -1,0 +1,132 @@
+Index: app/controllers/UserController.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>const db = require('../../models');\nconst jwt = require(\"jsonwebtoken\");\nconst config = require('../../config/auth.config.json');\nconst User = db.User;\nconst Op = db.sequelize.Op;\nconst bcrypt = require(\"bcrypt\");\n\n\nexports.findOne = (req, res) => {\n    User.findOne({\n        where: {\n            email: req.query.email,\n            password: req.query.password,\n        }\n    }).then(function (user) {\n        res.json(user);\n        res.end();\n    })\n}\n\nexports.findAll = (req, res) => {\n\n    User.findAll({\n        include: [\n            'tasks'\n        ],\n    })\n        .then(data => {\n            res.send(data);\n        })\n        .catch(err => {\n            res.status(500).send({\n                message:\n                    err.message || \"Some error occurred while retrieving users.\"\n            });\n        });\n};\n\nexports.create = (req, res) => {\n    const user = User.build();\n    user.name = req.body.name;\n    user.password = bcrypt.hashSync(req.body.password, 8);\n    user.email = req.body.email;\n\n    user.save()\n        .then(function (user) {\n            res.json(user);\n            res.end();\n        }).catch(function (err) {\n        res.status(400).send(err);\n    });\n}\n\nexports.delete = (req, res) => {\n    const id = req.params.id;\n\n    User.destroy({\n        where: {id: id}\n    })\n        .then(num => {\n            if (num === 1) {\n                res.send({\n                    message: 'User was deleted successfully!'\n                })\n            } else {\n                res.send({\n                    message: `Cannot delete User with id=${id}`\n                })\n            }\n        })\n        .catch(err => {\n            res.status(500).send({\n                message: `Could not delete User with id=${id}`\n            })\n        })\n};\n\n\nexports.login = (req, res) => {\n    const {password, email} = req.body;\n\n    User.findOne({\n        where: {\n            email,\n        }\n    }).then((user) => {\n            if (!user) {\n                return res.status(404).send({message: 'User Not found.'});\n            }\n\n            const passwordIsValid = bcrypt.compareSync(\n                password,\n                user.password\n            );\n\n            if (!passwordIsValid) {\n                return res.status(401).send({\n                    message: \"Invalid Password!\"\n                });\n            }\n            // const expiresIn = 24 * 60 * 60  // in seconds 24 hours;\n            const expiresIn = 120 * 2  // 2 min\n            const token = jwt.sign({id: user.id}, config.secret, {\n                expiresIn\n            });\n\n        res.status(200).send({\n            user,\n            token,\n            expiresIn,\n        });\n\n        }\n    ).catch((err) => res.status(400).send(err))\n\n\n    }\n\n    exports.register = (req, res) => {\n        const {password, email, name} = req.body;\n\n        User.findOne({\n            where: {\n                email,\n                password,\n                name,\n            }\n        }).then(function (user) {\n            if (user) {\n                res.json(user);\n            } else {\n                res.status(500).send({\n                    message: `User not found`\n                })\n            }\n\n            res.end();\n        }).catch(() => {\n            res.status(500).send({\n                message: `User not found`\n            })\n        })\n    }\nexports.logout = (req, res) => {\n    User.findOne({\n        where: {\n            token: req.body.token\n        }\n    }).then(user => {\n\n        user.update({token: null})\n            .then((user) =>\n                res.status(200).send({user})\n            )\n            .catch((err) => res.status(400).send(err));\n\n    }).catch(err => res.status(400).send(err))\n}\n\nexports.findById = (req, res) => {\n    const id = req.params.id;\n\n    User.findOne({\n        where: {\n            id\n        },\n        include: [\n            'tasks'\n        ],\n    }).then(function (user) {\n        res.json(user);\n        res.end();\n    })\n};\n\nexports.me = (req, res) => {\n    res.json(res.locals.user);\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/controllers/UserController.js	(revision 759a3bd824ee46693fd8ff17af2825ff5763b844)
++++ app/controllers/UserController.js	(date 1600419290998)
+@@ -104,43 +104,43 @@
+                 expiresIn
+             });
+ 
+-        res.status(200).send({
+-            user,
+-            token,
+-            expiresIn,
+-        });
++            res.status(200).send({
++                user,
++                token,
++                expiresIn,
++            });
+ 
+         }
+     ).catch((err) => res.status(400).send(err))
+ 
+ 
+-    }
++}
+ 
+-    exports.register = (req, res) => {
+-        const {password, email, name} = req.body;
++exports.register = (req, res) => {
++    const {password, email, name} = req.body;
+ 
+-        User.findOne({
+-            where: {
+-                email,
+-                password,
+-                name,
+-            }
+-        }).then(function (user) {
+-            if (user) {
+-                res.json(user);
+-            } else {
+-                res.status(500).send({
+-                    message: `User not found`
+-                })
+-            }
++    User.findOne({
++        where: {
++            email,
++            password,
++            name,
++        }
++    }).then(function (user) {
++        if (user) {
++            res.json(user);
++        } else {
++            res.status(500).send({
++                message: `User not found`
++            })
++        }
+ 
+-            res.end();
+-        }).catch(() => {
+-            res.status(500).send({
+-                message: `User not found`
+-            })
+-        })
+-    }
++        res.end();
++    }).catch(() => {
++        res.status(500).send({
++            message: `User not found`
++        })
++    })
++}
+ exports.logout = (req, res) => {
+     User.findOne({
+         where: {
+@@ -175,4 +175,18 @@
+ 
+ exports.me = (req, res) => {
+     res.json(res.locals.user);
+-}
+\ No newline at end of file
++}
++
++exports.update = (req, res) => {
++    const {email, name} = req.body;
++    User.update({
++        where:
++        email,
++        name,
++    }).then(function (user) {
++        res.json(user);
++        res.end();
++    }).catch(function (err) {
++        res.status(400).send(err);
++    });
++};
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"BranchesTreeState\">\n    <expand>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n    </expand>\n    <select>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"BRANCH:origin/testing\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n    </select>\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"c8676367-e64d-49d7-9839-a95d5eabec8d\" name=\"Default Changelist\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/app/controllers/UserController.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/controllers/UserController.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/migrations/20200917115839-modify_users_add_token.js\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/models/user.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/models/user.js\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ComposerSettings\">\n    <execution />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"nest.js\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"1hGlOCc2LJh8ZoK6fwGnatcErh0\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"DatabaseDriversLRU\" value=\"mysql\" />\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"js.last.introduce.type\" value=\"CONST\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"reference.settingsdialog.IDE.editor.colors.Console Colors\" />\n    <property name=\"ts.external.directory.path\" value=\"$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external\" />\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/app/models\" />\n    </key>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"c8676367-e64d-49d7-9839-a95d5eabec8d\" name=\"Default Changelist\" comment=\"\" />\n      <created>1599645275683</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1599645275683</updated>\n      <workItem from=\"1599645276752\" duration=\"11376000\" />\n      <workItem from=\"1599722114842\" duration=\"26240000\" />\n      <workItem from=\"1599808812060\" duration=\"3777000\" />\n      <workItem from=\"1599833955896\" duration=\"1899000\" />\n      <workItem from=\"1600067513260\" duration=\"15640000\" />\n      <workItem from=\"1600154374468\" duration=\"16477000\" />\n      <workItem from=\"1600240822772\" duration=\"19798000\" />\n      <workItem from=\"1600326606680\" duration=\"19291000\" />\n      <workItem from=\"1600356183841\" duration=\"2953000\" />\n      <workItem from=\"1600414305904\" duration=\"927000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"testing brunch\">\n      <created>1600353516011</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1600353516011</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"2\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"origin/testing\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"testing brunch\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"testing brunch\" />\n  </component>\n  <component name=\"WindowStateProjectService\">\n    <state x=\"560\" y=\"184\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog\" timestamp=\"1599740820545\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"560\" y=\"184\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1599740820545\" />\n    <state x=\"698\" y=\"271\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog\" timestamp=\"1599722902833\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"698\" y=\"271\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1599722902833\" />\n    <state x=\"556\" y=\"4\" key=\"CommitChangelistDialog2\" timestamp=\"1600353515904\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"556\" y=\"4\" key=\"CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1600353515904\" />\n    <state x=\"837\" y=\"422\" key=\"Github.ShareDialog\" timestamp=\"1599655311939\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"837\" y=\"422\" key=\"Github.ShareDialog/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1599655311939\" />\n    <state x=\"461\" y=\"157\" key=\"SettingsEditor\" timestamp=\"1600086010279\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"461\" y=\"157\" key=\"SettingsEditor/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1600086010279\" />\n    <state x=\"560\" y=\"240\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1600353517452\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"560\" y=\"240\" key=\"Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1600353517452\" />\n    <state x=\"822\" y=\"401\" width=\"328\" height=\"259\" key=\"com.intellij.database.actions.DdlActions$DeleteProvider2$1\" timestamp=\"1600344076676\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"822\" y=\"401\" width=\"328\" height=\"259\" key=\"com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1600344076676\" />\n    <state x=\"100\" y=\"100\" width=\"1720\" height=\"844\" key=\"com.intellij.history.integration.ui.views.DirectoryHistoryDialog\" timestamp=\"1599729448890\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"100\" y=\"100\" width=\"1720\" height=\"844\" key=\"com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1599729448890\" />\n    <state x=\"100\" y=\"100\" width=\"1720\" height=\"844\" key=\"com.intellij.history.integration.ui.views.FileHistoryDialog\" timestamp=\"1600335298833\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"100\" y=\"100\" width=\"1720\" height=\"844\" key=\"com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1600335298833\" />\n    <state x=\"664\" y=\"213\" width=\"592\" height=\"831\" key=\"find.popup\" timestamp=\"1600174034472\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1044\" />\n    </state>\n    <state x=\"664\" y=\"213\" width=\"592\" height=\"831\" key=\"find.popup/0.0.1920.1044@0.0.1920.1044\" timestamp=\"1600174034472\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 759a3bd824ee46693fd8ff17af2825ff5763b844)
++++ .idea/workspace.xml	(date 1600419291390)
+@@ -29,8 +29,7 @@
+     <list default="true" id="c8676367-e64d-49d7-9839-a95d5eabec8d" name="Default Changelist" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserController.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/migrations/20200917115839-modify_users_add_token.js" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/routes/UserRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/UserRoutes.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -87,7 +86,7 @@
+       <workItem from="1600240822772" duration="19798000" />
+       <workItem from="1600326606680" duration="19291000" />
+       <workItem from="1600356183841" duration="2953000" />
+-      <workItem from="1600414305904" duration="927000" />
++      <workItem from="1600414305904" duration="3562000" />
+     </task>
+     <task id="LOCAL-00001" summary="testing brunch">
+       <created>1600353516011</created>

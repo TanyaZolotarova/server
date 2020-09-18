@@ -1,0 +1,62 @@
+Index: app/routes/UserRoutes.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>const users = require('../controllers/UserController.js');\nconst router = require('express').Router();\nconst auth = require('../Middleware/auth');\n\n// auth\nrouter.get('/', users.findAll);\nrouter.get('/one', users.findOne);\nrouter.post('/', users.create);\nrouter.delete('/:id', users.delete);\nrouter.post('/login', users.login);\nrouter.post('/register', users.create);\nrouter.post('/logout', users.logout);\n\nrouter.get('/me', auth, users.me);\n\nmodule.exports = router;\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/routes/UserRoutes.js	(revision 6710d83c88948b20662163a9606145b280e4c85d)
++++ app/routes/UserRoutes.js	(date 1600419512956)
+@@ -10,6 +10,7 @@
+ router.post('/login', users.login);
+ router.post('/register', users.create);
+ router.post('/logout', users.logout);
++router.put('/:id/update', users.update);
+ 
+ router.get('/me', auth, users.me);
+ 
+Index: models/user.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>'use strict';\nconst {\n  Model\n} = require('sequelize');\n\nmodule.exports = (sequelize, DataTypes) => {\n  class User extends Model {\n    /**\n     * Helper method for defining associations.\n     * This method is not a part of Sequelize lifecycle.\n     * The `models/index` file will call this method automatically.\n     */\n    static associate(models) {\n      // define association here\n    }\n  };\n\n  User.init({\n    name: DataTypes.STRING,\n    password: DataTypes.STRING,\n    email: DataTypes.STRING,\n    token: DataTypes.STRING,\n  }, {\n    sequelize,\n    modelName: 'User',\n  });\n\n\n  return User;\n};
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- models/user.js	(revision 6710d83c88948b20662163a9606145b280e4c85d)
++++ models/user.js	(date 1600420100746)
+@@ -19,7 +19,6 @@
+     name: DataTypes.STRING,
+     password: DataTypes.STRING,
+     email: DataTypes.STRING,
+-    token: DataTypes.STRING,
+   }, {
+     sequelize,
+     modelName: 'User',
+Index: migrations/20200917115839-modify_users_add_token.js
+===================================================================
+--- migrations/20200917115839-modify_users_add_token.js	(revision 6710d83c88948b20662163a9606145b280e4c85d)
++++ migrations/20200917115839-modify_users_add_token.js	(revision 6710d83c88948b20662163a9606145b280e4c85d)
+@@ -1,23 +0,0 @@
+-module.exports = {
+-  up(queryInterface, Sequelize) {
+-    return Promise.all([
+-      queryInterface.addColumn(
+-          'Users', // table name
+-          'token', // new field name
+-          {
+-            type: Sequelize.STRING,
+-            allowNull: true,
+-          },
+-      ),
+-
+-    ]);
+-  },
+-
+-  down(queryInterface, Sequelize) {
+-    // logic for reverting the changes
+-    return Promise.all([
+-      queryInterface.removeColumn('Users', 'token'),
+-
+-    ]);
+-  },
+-};
